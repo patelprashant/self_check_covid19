@@ -13,7 +13,7 @@ class QuestionList {
     Question(
         'Do you have fever\n(Temperature 37.8°C and above)', '07.webp', 15),
     Question('Are you having\ndifficulty breathing?', '08.webp', 15),
-    Question(' Are you experiencing\nfatigue?', '09.webp', 15),
+    Question('Are you experiencing\nfatigue?', '09.webp', 15),
     Question(
         'Have you traveled recently\nduring the past 14 days?', '10.webp', 51),
     Question('Do you have a travel\nhistory of COVID-19\nINFECTED AREA?',

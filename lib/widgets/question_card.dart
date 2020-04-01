@@ -54,7 +54,6 @@ class QuestionCard extends StatelessWidget {
                     ),
                     onPressed: () {
                       onBtnPressed(queScore);
-//                    print('User Score $queScore');
                     },
                   ),
                   FlatButton(
@@ -64,7 +63,6 @@ class QuestionCard extends StatelessWidget {
                     ),
                     onPressed: () {
                       onBtnPressed(0);
-//                    print('User Score 0');
                     },
                   ),
                 ],

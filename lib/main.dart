@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import 'question_page.dart';
-import 'widgets/question_card.dart';
 
 void main() => runApp(MyApp());
 
@@ -37,7 +36,10 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: SafeArea(
-        child: QuestionPage(),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: QuestionPage(),
+        ),
       ),
     );
   }
