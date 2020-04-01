@@ -11,17 +11,17 @@ class QuestionList {
     Question('Are you having sorethroat?', '04.webp', 10),
     Question('Are you having body aches?', '05.webp', 10),
     Question(
-        'Do you have fever\n(Temperature 37.8°C and above)', '07.webp', 10),
-    Question('Are you having\ndifficulty breathing?', '08.webp', 10),
-    Question('Are you experiencing\nfatigue?', '09.webp', 10),
+        'Do you have fever\n(Temperature 37.8°C and above)', '07.webp', 15),
+    Question('Are you having\ndifficulty breathing?', '08.webp', 15),
+    Question(' Are you experiencing\nfatigue?', '09.webp', 15),
     Question(
-        'Have you traveled recently\nduring the past 14 days?', '10.webp', 40),
+        'Have you traveled recently\nduring the past 14 days?', '10.webp', 51),
     Question('Do you have a travel\nhistory of COVID-19\nINFECTED AREA?',
-        '11.webp', 40),
+        '11.webp', 101),
     Question(
         'Do you have direct contact\nwith or are you taking care of\na positive COVID-19 PATIENT?',
         '12.webp',
-        50),
+        101),
   ];
 
   void nextQue() {
