@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:selfcheckcovid19/common/constants.dart';
+import 'package:selfcheckcovid19/models/Question.dart';
 
 class QuestionCard extends StatelessWidget {
-  final String queImage;
-  final String queText;
-  final int queScore;
+  final Question currentQue;
 
   final Function(int queScore) onBtnPressed;
 
-  const QuestionCard(
-      {this.queImage, this.queText, this.queScore, this.onBtnPressed});
+  const QuestionCard({this.currentQue, this.onBtnPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -26,20 +24,22 @@ class QuestionCard extends StatelessWidget {
               Expanded(
                 child: Column(
                   children: <Widget>[
-                    Image.asset(
-                      queImage,
-                      fit: BoxFit.fitHeight,
-                    ),
-                    SizedBox(
-                      height: 8.0,
-                    ),
                     FittedBox(
                       fit: BoxFit.fitWidth,
                       alignment: Alignment.bottomCenter,
                       child: Text(
-                        queText,
-                        style: GoogleFonts.righteous(fontSize: 35.0),
+                        currentQue.queText,
+                        style: QUESTION_TEXT_FONT_STYLE,
                       ),
+                    ),
+                    SizedBox(
+                      height: 8.0,
+                    ),
+                    Image.asset(
+                      'assets/images/' + currentQue.queImage,
+                      fit: BoxFit.fitHeight,
+                      alignment: Alignment.center,
+                      cacheHeight: 128,
                     ),
                   ],
                 ),
@@ -49,17 +49,17 @@ class QuestionCard extends StatelessWidget {
                 children: <Widget>[
                   FlatButton(
                     child: Text(
-                      'YES',
-                      style: GoogleFonts.righteous(fontSize: 25.0),
+                      ACTION_LABEL_YES,
+                      style: ACTION_LABEL_FONT_STYLE,
                     ),
                     onPressed: () {
-                      onBtnPressed(queScore);
+                      onBtnPressed(currentQue.queScore);
                     },
                   ),
                   FlatButton(
                     child: Text(
-                      'NO',
-                      style: GoogleFonts.righteous(fontSize: 25.0),
+                      ACTION_LABEL_NO,
+                      style: ACTION_LABEL_FONT_STYLE,
                     ),
                     onPressed: () {
                       onBtnPressed(0);

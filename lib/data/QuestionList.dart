@@ -18,10 +18,8 @@ class QuestionList {
         'Have you traveled recently\nduring the past 14 days?', '10.webp', 51),
     Question('Do you have a travel\nhistory of COVID-19\nINFECTED AREA?',
         '11.webp', 101),
-    Question(
-        'Do you have direct contact\nwith or are you taking care of\na positive COVID-19 PATIENT?',
-        '12.webp',
-        101),
+    Question('Do you have direct contact\nwith a positive COVID-19 patient?',
+        '12.webp', 101),
   ];
 
   void nextQue() {
@@ -36,6 +34,10 @@ class QuestionList {
 
   void resetQue() {
     _queNum = 0;
+  }
+
+  Question getCurrentQue() {
+    return _questionBank[_queNum];
   }
 
   String getQueText() {

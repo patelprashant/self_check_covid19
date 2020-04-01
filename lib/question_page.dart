@@ -16,7 +16,6 @@ class QuestionPage extends StatefulWidget {
 class _QuestionPageState extends State<QuestionPage> {
   int queNumber = 0;
   int totalScore = 0;
-
   var userScore = 0;
 
   void showNextQue(int userScore) {
@@ -75,9 +74,7 @@ class _QuestionPageState extends State<QuestionPage> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         QuestionCard(
-          queImage: _questionList.getQueImage(),
-          queText: _questionList.getQueText(),
-          queScore: _questionList.getQueScore(),
+          currentQue: _questionList.getCurrentQue(),
           onBtnPressed: showNextQue,
         ),
       ],

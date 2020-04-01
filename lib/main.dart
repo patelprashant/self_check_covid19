@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+import 'common/constants.dart';
 import 'question_page.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Self Test - COVID19'),
+      home: MyHomePage(title: APP_TITLE),
     );
   }
 }
