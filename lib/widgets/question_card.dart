@@ -14,6 +14,7 @@ class QuestionCard extends StatelessWidget {
     return SizedBox(
       height: 370.0,
       child: Card(
+        elevation: 5.0,
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(16.0),

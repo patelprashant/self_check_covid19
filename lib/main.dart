@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:selfcheckcovid19/widgets/info_dialog.dart';
 
 import 'common/constants.dart';
 import 'question_page.dart';
@@ -10,11 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: APP_TITLE,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: APP_TITLE),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -35,6 +37,24 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.grey.shade500,
       appBar: AppBar(
         title: Text(widget.title),
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(right: 10.0),
+            child: GestureDetector(
+              child: Icon(
+                Icons.info,
+                size: 24.0,
+              ),
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return InfoDialog();
+                    });
+              },
+            ),
+          ),
+        ],
       ),
       body: SafeArea(
         child: Padding(
