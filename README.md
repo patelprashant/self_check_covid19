@@ -16,7 +16,4 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 Few Screenshots of the app:
-![Question Layout](/screenshots/01.png)
-![App Info](/screenshots/02.png)
-![Result Dialog](/screenshots/03.png)
-![Result Dialog](/screenshots/04.png)
+![Question Layout](/screenshots/01.png) ![App Info](/screenshots/02.png) ![Result Dialog](/screenshots/03.png) ![Result Dialog](/screenshots/04.png)
