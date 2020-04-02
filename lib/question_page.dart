@@ -48,7 +48,7 @@ class _QuestionPageState extends State<QuestionPage> {
       riskText = "Medium";
       riskColor = Colors.orange;
       suggestionText =
-      "Drink water regularly and observe personal good hygiene."
+          "Drink water regularly and observe personal good hygiene."
           "\nPay attention to your health and redo test after two days.";
     } else {
       riskText = "High";
