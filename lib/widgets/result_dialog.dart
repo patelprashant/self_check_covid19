@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:selfcheckcovid19/models/Result.dart';
 
 class ResultDialog extends StatelessWidget {
-  const ResultDialog({
-    Key key,
-    @required this.riskText,
-    @required this.riskColor,
-    @required this.suggestionText,
-  }) : super(key: key);
+  const ResultDialog({Key key, @required this.userResult}) : super(key: key);
 
-  final String riskText;
-  final riskColor;
-  final String suggestionText;
+  final Result userResult;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +14,8 @@ class ResultDialog extends StatelessWidget {
       elevation: 10.0,
       title: Text(
         'Result',
-        style: GoogleFonts.righteous(fontSize: 20.0, color: riskColor),
+        style:
+        GoogleFonts.righteous(fontSize: 20.0, color: userResult.riskColor),
       ),
       content: SingleChildScrollView(
         child: Column(
@@ -29,14 +24,14 @@ class ResultDialog extends StatelessWidget {
           children: <Widget>[
             Text('Your risk of having COVID 19 is'),
             Text(
-              riskText,
+              userResult.riskText,
               style: GoogleFonts.righteous(
                 fontSize: 45.0,
-                color: riskColor,
+                color: userResult.riskColor,
                 fontWeight: FontWeight.w900,
               ),
             ),
-            Text(suggestionText),
+            Text(userResult.suggestionText),
           ],
         ),
       ),

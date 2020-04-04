@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:selfcheckcovid19/common/constants.dart';
+import 'package:selfcheckcovid19/question_page.dart';
 import 'package:selfcheckcovid19/widgets/info_dialog.dart';
-
-import 'common/constants.dart';
-import 'question_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -47,10 +46,11 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               onTap: () {
                 showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return InfoDialog();
-                    });
+                  context: context,
+                  builder: (BuildContext context) {
+                    return InfoDialog();
+                  },
+                );
               },
             ),
           ),

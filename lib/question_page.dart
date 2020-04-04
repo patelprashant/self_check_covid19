@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:selfcheckcovid19/data/QuestionList.dart';
+import 'package:selfcheckcovid19/data/ResultSet.dart';
+import 'package:selfcheckcovid19/models/Result.dart';
+import 'package:selfcheckcovid19/widgets/question_card.dart';
 import 'package:selfcheckcovid19/widgets/result_dialog.dart';
 
-import 'data/QuestionList.dart';
-import 'widgets/question_card.dart';
-
 QuestionList _questionList = new QuestionList();
+ResultSet _resultSet = new ResultSet();
 
 class QuestionPage extends StatefulWidget {
   QuestionPage({Key key}) : super(key: key);
@@ -33,37 +35,21 @@ class _QuestionPageState extends State<QuestionPage> {
   }
 
   void _showResult(int totalScore) {
-    String riskText;
-    String suggestionText;
-    var riskColor;
+    Result userResult;
     if (totalScore <= 5) {
-      riskText = "None";
-      riskColor = Colors.green.shade900;
-      suggestionText = "You may be stressed,get some rest.";
+      userResult = _resultSet.getResultNone();
     } else if (totalScore <= 50) {
-      riskText = "Low";
-      riskColor = Colors.lightGreenAccent.shade700;
-      suggestionText = "You may be stressed,get some rest.";
+      userResult = _resultSet.getResultLow();
     } else if (totalScore > 50 && totalScore <= 100) {
-      riskText = "Medium";
-      riskColor = Colors.orange;
-      suggestionText =
-          "Drink water regularly and observe personal good hygiene."
-          "\nPay attention to your health and redo test after two days.";
+      userResult = _resultSet.getResultMed();
     } else {
-      riskText = "High";
-      riskColor = Colors.red.shade900;
-      suggestionText = "Please see a doctor immediately."
-          "\nDo not panic, isolate yourself from friends and family.";
+      userResult = _resultSet.getResultHigh();
     }
 
     showDialog(
         context: context,
         builder: (BuildContext context) {
-          return ResultDialog(
-              riskText: riskText,
-              riskColor: riskColor,
-              suggestionText: suggestionText);
+          return ResultDialog(userResult: userResult);
         });
   }
 
