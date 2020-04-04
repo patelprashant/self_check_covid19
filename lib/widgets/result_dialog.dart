@@ -16,7 +16,12 @@ class ResultDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Test Result'),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+      elevation: 10.0,
+      title: Text(
+        'Result',
+        style: GoogleFonts.righteous(fontSize: 20.0, color: riskColor),
+      ),
       content: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -25,7 +30,11 @@ class ResultDialog extends StatelessWidget {
             Text('Your risk of having COVID 19 is'),
             Text(
               riskText,
-              style: GoogleFonts.righteous(fontSize: 45.0, color: riskColor),
+              style: GoogleFonts.righteous(
+                fontSize: 45.0,
+                color: riskColor,
+                fontWeight: FontWeight.w900,
+              ),
             ),
             Text(suggestionText),
           ],
