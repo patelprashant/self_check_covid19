@@ -31,6 +31,11 @@ class ResultDialog extends StatelessWidget {
                 fontWeight: FontWeight.w900,
               ),
             ),
+            Divider(
+              height: 10.0,
+              thickness: 5.0,
+              color: userResult.riskColor,
+            ),
             Text(userResult.suggestionText),
           ],
         ),
